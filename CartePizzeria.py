@@ -2,18 +2,17 @@ class CartePizzariaException(Exception):
     pass
 
 class CartePizzeria:
-    def __init__(self, pizza):
+    def __init__(self):
         self.carte = []
-        self.pizza = pizza
-
+       
     def is_empty(self):
         if len(self.carte) == 0:
+            print("La liste est vide")
             return True
-            print("liste vide")
         return False
 
     def nb_pizzas(self):
-        return self.carte
+        return len(self.carte)
 
     def add_pizza(self, pizza):
         self.carte.append(pizza)
