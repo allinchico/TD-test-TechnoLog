@@ -1,3 +1,6 @@
+class CartePizzariaException(Exception):
+    pass
+
 class CartePizzeria:
     def __init__(self, pizza):
         self.carte = []
@@ -6,6 +9,7 @@ class CartePizzeria:
     def is_empty(self):
         if len(self.carte) == 0:
             return True
+            print("liste vide")
         return False
 
     def nb_pizzas(self):
@@ -15,4 +19,9 @@ class CartePizzeria:
         self.carte.append(pizza)
 
     def remove_pizza(self, name):
-        self.carte.remove(name)
+        if name in self.carte:
+            self.carte.remove(name)
+        raise CartePizzariaException("La pizza n'est pas dans la carte")
+
+
+
